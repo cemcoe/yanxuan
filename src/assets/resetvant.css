@@ -1,0 +1,5 @@
+/* 重置 vant ui 样式 */
+
+.tabBtnWrap .van-tab {
+  font-size: .4rem;
+}

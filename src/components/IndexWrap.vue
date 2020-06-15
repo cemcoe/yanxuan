@@ -13,27 +13,41 @@
         <van-button class="loginBtn" type="primary" size="mini">登录</van-button>
       </van-col>
     </van-row>
+
+    <van-tabs v-model="active" swipeable class="tabBtnWrap">
+      <van-tab v-for="item in tabBtnArr" :title="item" :key="item">{{ item }}</van-tab>
+    </van-tabs>
   </div>
 </template>
 
 <script>
+import '@/assets/resetvant.css'
+import axios from 'axios'
+
 export default {
   name: "IndexWrap",
   data() {
-    return {};
+    return {
+      active: '',
+      tabBtnArr: []
+    };
+  },
+  created() {
+    axios.get('http://localhost:3344/get_tabBtn_list').then(_d => this.tabBtnArr = _d.data)
   },
   methods: {
     searchBtnFn() {
-      console.log('ddd')
-      this.$router.push('/searchpage')
+      console.log("ddd");
+      this.$router.push("/searchpage");
     }
   }
 };
 </script>
 
 <style scoped>
+
 .title_div {
-  padding: .21333rem .4rem;
+  padding: 0.21333rem 0.4rem;
 }
 .logo {
   width: 1.84rem;
@@ -57,11 +71,14 @@ export default {
 }
 .search_div {
   background-color: #ededed;
-  border-radius: .10667rem;
-  height: .74667rem;
+  border-radius: 0.10667rem;
+  height: 0.74667rem;
   font-size: 0.3733rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.tabBtnWrap {
+  font-size: .4rem;
 }
 </style>

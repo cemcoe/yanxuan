@@ -8,8 +8,8 @@ import './assets/reset.css'
 
 Vue.config.productionTip = false
 
-import { Button, Col, Row, Icon, Field,  } from 'vant';
-Vue.use(Button).use(Col).use(Row).use(Icon).use(Field);
+import { Button, Col, Row, Icon, Field,  Tab, Tabs} from 'vant';
+Vue.use(Button).use(Col).use(Row).use(Icon).use(Field).use(Tab).use(Tabs);
 
 new Vue({
   router,

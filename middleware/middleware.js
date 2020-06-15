@@ -46,6 +46,11 @@ app.get("/search", (req, res) => {
   res.send(_resultObj);
 });
 
+app.get("/get_tabBtn_list", (req, res) => {
+  let _d = ['推荐', '居家生活', '服饰鞋包', '美食酒水', '个护清洁', '母婴亲子', ]
+  res.send(_d)
+})
+
 app.listen(3344, () => {
   console.log("server is running");
 });
