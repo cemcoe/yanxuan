@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "SearchPage",
   data() {
@@ -35,6 +36,14 @@ export default {
       input_v: "",
       isCloseShow: false
     };
+  },
+  created() {
+    console.log('create')
+    axios.get('http://localhost:3344/aa')
+    .then(_d => {
+      console.log(_d.data)
+    })
+
   },
   watch: {
     // input_v() {

@@ -1,5 +1,11 @@
 # vue-test
 
+启动服务端
+```md
+cd middleware
+node middleware.js
+```
+
 移动端适配方案
 先明白基本概念
 1. viewport 是啥？
