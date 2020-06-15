@@ -3,20 +3,20 @@
     <!-- 两端对齐 -->
     <van-row type="flex" justify="space-between">
       <van-col span="20">
-        <van-field class="searchDiv" 
-        v-model="input_v"
-        @input="inputValFn" 
-        placeholder="好货内部价">
+        <van-field
+          class="searchDiv"
+          v-model="input_v"
+          @input="inputValFn"
+          placeholder="好货内部价"
+          @keyup.enter="submitFn"
+        >
           <template v-slot:left-icon>
             <van-icon name="search" class="searchIconLeft" />
           </template>
 
           <!-- 清空搜索框 -->
           <template #button>
-            <van-icon v-show="isCloseShow" 
-            @click="clear_search_inputFn"
-            name="close" />
-
+            <van-icon v-show="isCloseShow" @click="clear_search_inputFn" name="close" />
           </template>
         </van-field>
       </van-col>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "SearchPage",
   data() {
@@ -38,12 +38,7 @@ export default {
     };
   },
   created() {
-    console.log('create')
-    axios.get('http://localhost:3344/aa')
-    .then(_d => {
-      console.log(_d.data)
-    })
-
+    console.log("create");
   },
   watch: {
     // input_v() {
@@ -53,22 +48,33 @@ export default {
   },
   methods: {
     inputValFn() {
-      console.log(this.input_v)
-      this.isCloseShow = true
+      // console.log(this.input_v)
+      this.isCloseShow = true;
     },
+    // 清空搜索框
     clear_search_inputFn() {
-      this.input_v = ''
-      this.isCloseShow = false
+      this.input_v = "";
+      this.isCloseShow = false;
       // console.log('clear')
+    },
+    // enter 事件响应
+    submitFn() {
+      console.log(this.input_v);
+      axios.get("http://localhost:3344/search", {
+        params: {
+          search_key: this.input_v
+        }
+      }).then(_d => {
+        console.log(_d.data);
+      });
     }
   }
-
 };
 </script>
 
 <style scoped>
 .titleDiv {
-  padding: .2rem .4rem;
+  padding: 0.2rem 0.4rem;
 }
 .cancelBtn {
   width: 0.98667rem;
@@ -92,9 +98,9 @@ export default {
   height: 0.74667rem;
   line-height: 0.74667rem;
   border-radius: 4px;
-  font-size: .37333rem;
+  font-size: 0.37333rem;
 }
 .searchIconLeft {
-  font-size: .5rem;
+  font-size: 0.5rem;
 }
 </style>
