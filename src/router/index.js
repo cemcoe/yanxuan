@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import IndexWrap from '@/components/IndexWrap'
+import SearchPage from '@/components/SearchPage'
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,10 @@ Vue.use(VueRouter)
     path: '/',
     name: 'IndexWrap',
     component: IndexWrap
+  },{
+    path: '/searchpage',
+    name: 'SearchPage',
+    component: SearchPage
   },
   {
     path: '/about',

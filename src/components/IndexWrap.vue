@@ -5,7 +5,7 @@
       <van-col span="5">
         <img class="logo" src="~@/assets/logo-img.png" alt />
       </van-col>
-      <van-col span="15" class="search_div">
+      <van-col @click="searchBtnFn" span="15" class="search_div">
         <van-icon name="search" size="0.5rem" />
         <span>搜索商品，共32822款好物</span>
       </van-col>
@@ -21,6 +21,12 @@ export default {
   name: "IndexWrap",
   data() {
     return {};
+  },
+  methods: {
+    searchBtnFn() {
+      console.log('ddd')
+      this.$router.push('/searchpage')
+    }
   }
 };
 </script>
