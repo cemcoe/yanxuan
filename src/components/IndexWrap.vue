@@ -68,6 +68,18 @@
       </van-count-down>
       <a href="#" class="right">更多>></a>
     </div>
+
+    <div class="GoodsList_wrap">
+      <van-grid :column-num="3">
+        <van-grid-item
+          v-for="(item, index) in goodsListObj"
+          :key="index"
+          :icon="item.img_url"
+          :text="item.img_txt"
+        />
+      </van-grid>
+
+    </div>
   </div>
 </template>
 
@@ -132,6 +144,38 @@ export default {
           img_url:
             "http://yanxuan.nosdn.127.net/12e8efd15b9b210ab156a7ee9b340548.gif",
           img_txt: "好货抄底"
+        }
+      ],
+      goodsListObj: [
+        {
+          img_url:
+            "https://yanxuan-item.nosdn.127.net/e78096b543cc65af16da3a93cacb4071.png?quality=75&type=webp&imageView&thumbnail=216x216",
+          img_txt: "￥219"
+        },
+        {
+          img_url:
+            "https://yanxuan-item.nosdn.127.net/570e762763536175b9ec226c0d93a7cd.png?quality=75&type=webp&imageView&thumbnail=216x216",
+          img_txt: "￥167"
+        },
+        {
+          img_url:
+            "https://yanxuan-item.nosdn.127.net/f3f18a4fe9e7905cd7c9ff28e42ff0c2.png?quality=75&type=webp&imageView&thumbnail=216x216",
+          img_txt: "￥50.2"
+        },
+        {
+          img_url:
+            "https://yanxuan-item.nosdn.127.net/0b05c22b99e8fc2cf3015e4bbb8d7c3f.png?quality=75&type=webp&imageView&thumbnail=216x216",
+          img_txt: "￥139"
+        },
+        {
+          img_url:
+            "https://yanxuan-item.nosdn.127.net/ec55e5314bfd670320c3c15ce5e0b095.png?quality=75&type=webp&imageView&thumbnail=216x216",
+          img_txt: "￥42.8"
+        },
+        {
+          img_url:
+            "https://yanxuan-item.nosdn.127.net/f815bf4d31ece0500089d69475c2014c.png?quality=75&type=webp&imageView&thumbnail=216x216",
+          img_txt: "￥249"
         }
       ],
       time: 30 * 60 * 60 * 1000
@@ -242,11 +286,11 @@ export default {
 
 .CountDownWrap p {
   float: left;
-  font-size: .42rem;
+  font-size: 0.42rem;
 }
 .CountDownWrap a.right {
   float: right;
-  font-size: .37333rem;
+  font-size: 0.37333rem;
   color: #333;
 }
 .colon {
@@ -256,18 +300,18 @@ export default {
 }
 .block {
   display: inline-block;
-  width: .48rem;
-  height: .48rem;
-  line-height: .48rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
   color: #fff;
-  font-size: .32rem;
+  font-size: 0.32rem;
   text-align: center;
   background-color: #333;
-  border-radius: .05rem;
+  border-radius: 0.05rem;
 }
 .CountDownStyle {
   float: left;
-  padding-top: .4rem;
-  padding-left: .2rem;
+  padding-top: 0.4rem;
+  padding-left: 0.2rem;
 }
 </style>
