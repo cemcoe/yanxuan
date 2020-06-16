@@ -13,6 +13,9 @@ Vue.use(Button).use(Col).use(Row).use(Icon).use(Field).use(Tab).use(Tabs).use(Sw
 Vue.use(Grid);
 Vue.use(GridItem);
 
+import { CountDown } from 'vant';
+Vue.use(CountDown);
+
 new Vue({
   router,
   store,

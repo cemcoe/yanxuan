@@ -46,12 +46,27 @@
 
     <div class="GoodsColumn_wrap">
       <van-grid :column-num="5">
-        <van-grid-item 
-        v-for="(item, index) in goodsColumn_Arr" 
-        :key="index" 
-        :icon="item.img_url" 
-        :text="item.img_txt" />
+        <van-grid-item
+          v-for="(item, index) in goodsColumn_Arr"
+          :key="index"
+          :icon="item.img_url"
+          :text="item.img_txt"
+        />
       </van-grid>
+    </div>
+
+    <div class="CountDownWrap">
+      <p>限时购</p>
+      <van-count-down :time="time" class="CountDownStyle">
+        <template v-slot="timeData">
+          <span class="block">{{ timeData.hours }}</span>
+          <span class="colon">:</span>
+          <span class="block">{{ timeData.minutes }}</span>
+          <span class="colon">:</span>
+          <span class="block">{{ timeData.seconds }}</span>
+        </template>
+      </van-count-down>
+      <a href="#" class="right">更多>></a>
     </div>
   </div>
 </template>
@@ -118,7 +133,8 @@ export default {
             "http://yanxuan.nosdn.127.net/12e8efd15b9b210ab156a7ee9b340548.gif",
           img_txt: "好货抄底"
         }
-      ]
+      ],
+      time: 30 * 60 * 60 * 1000
     };
   },
   created() {
@@ -216,5 +232,42 @@ export default {
   display: inline-block;
   vertical-align: middle;
   background-size: 100% 100%;
+}
+
+.CountDownWrap {
+  height: 1.33333rem;
+  line-height: 1.33333rem;
+  padding: 0 0.4rem;
+}
+
+.CountDownWrap p {
+  float: left;
+  font-size: .42rem;
+}
+.CountDownWrap a.right {
+  float: right;
+  font-size: .37333rem;
+  color: #333;
+}
+.colon {
+  display: inline-block;
+  margin: 0 4px;
+  color: #ee0a24;
+}
+.block {
+  display: inline-block;
+  width: .48rem;
+  height: .48rem;
+  line-height: .48rem;
+  color: #fff;
+  font-size: .32rem;
+  text-align: center;
+  background-color: #333;
+  border-radius: .05rem;
+}
+.CountDownStyle {
+  float: left;
+  padding-top: .4rem;
+  padding-left: .2rem;
 }
 </style>
