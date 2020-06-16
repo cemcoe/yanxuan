@@ -1,7 +1,7 @@
 <template>
   <div class="title_div">
     <!-- 两端对齐 -->
-    <van-row type="flex" justify="space-between">
+    <van-row type="flex" justify="space-between" style="padding:0 .2rem;">
       <van-col span="5">
         <img class="logo" src="~@/assets/logo-img.png" alt />
       </van-col>
@@ -15,25 +15,46 @@
     </van-row>
 
     <van-tabs v-model="active" swipeable class="tabBtnWrap">
-      <van-tab v-for="item in tabBtnArr" :title="item" :key="item">{{ item }}</van-tab>
+      <van-tab v-for="item in tabBtnArr" :title="item" :key="item"></van-tab>
     </van-tabs>
+
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+      <van-swipe-item v-for="item in swipe_imgArr">
+        <img :src="item" alt />
+      </van-swipe-item>
+    </van-swipe>
+
+    <div class="indexServicePolicy">
+      <ul>
+         <li><i style="background-image:url(http://yanxuan.nosdn.127.net/a03dd909803b9ac032eba58b7253a2f6.png);"></i>网易自营品牌</li>
+        <li><i style="background-image:url(http://yanxuan.nosdn.127.net/2d0402ffcd52b3ec3b07422681c42a89.png);"></i>30天无忧退货</li>
+        <li><i style="background-image:url(http://yanxuan.nosdn.127.net/eb61ee48e8942dbd1784c9ee75ebe955.png);"></i>48小时快速退款</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
-import '@/assets/resetvant.css'
-import axios from 'axios'
+import "@/assets/resetvant.css";
+import axios from "axios";
 
 export default {
   name: "IndexWrap",
   data() {
     return {
-      active: '',
-      tabBtnArr: []
+      active: "",
+      tabBtnArr: [],
+      swipe_imgArr: []
     };
   },
   created() {
-    axios.get('http://localhost:3344/get_tabBtn_list').then(_d => this.tabBtnArr = _d.data)
+    axios
+      .get("http://localhost:3344/get_tabBtn_list")
+      .then(_d => (this.tabBtnArr = _d.data));
+    // 轮播图
+    axios
+      .get("http://localhost:3344/get_swipe_img")
+      .then(_d => (this.swipe_imgArr = _d.data));
   },
   methods: {
     searchBtnFn() {
@@ -45,9 +66,8 @@ export default {
 </script>
 
 <style scoped>
-
 .title_div {
-  padding: 0.21333rem 0.4rem;
+  padding: 0.21333rem 0 0.4rem 0;
 }
 .logo {
   width: 1.84rem;
@@ -79,6 +99,50 @@ export default {
   justify-content: center;
 }
 .tabBtnWrap {
-  font-size: .4rem;
+  font-size: 0.4rem;
+  padding: 0 0.2rem;
 }
+
+.my-swipe .van-swipe-item {
+  height: 4rem;
+  color: #fff;
+  font-size: 20px;
+  line-height: 150px;
+  text-align: center;
+  background-color: #39a9ed;
+}
+
+.indexServicePolicy{
+  width: 100%;
+}
+.indexServicePolicy ul{
+  height: .96rem;
+  padding: 0 .4rem;
+  display: flex;
+  align-items: center;
+}
+.indexServicePolicy ul li{
+  flex: 1;
+  font-size: .32rem;
+  color: #333;
+  margin-left: .10667rem;
+  line-height: .42667rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.indexServicePolicy ul li i{
+  width: .42667rem;
+  height: .42667rem;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: .32rem;
+  color: #333;
+  margin-left: .10667rem;
+  line-height: .42667rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 100% 100%;
+}
+
+
 </style>

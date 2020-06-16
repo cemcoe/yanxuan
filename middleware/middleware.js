@@ -51,6 +51,20 @@ app.get("/get_tabBtn_list", (req, res) => {
   res.send(_d)
 })
 
+// 轮播图接口
+app.get('/get_swipe_img', (req, res) => {
+  let _d = [
+    'https://yanxuan.nosdn.127.net/db1b51a817ef9e318e0268b8b17b3781.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+    'https://yanxuan.nosdn.127.net/9fc95f708136dec4090a3709c2ea4956.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+    'https://yanxuan.nosdn.127.net/df33b43da7203122a4e8abecfe6e62cd.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+    'https://yanxuan.nosdn.127.net/9fc95f708136dec4090a3709c2ea4956.jpg?type=webp&imageView&quality=75&thumbnail=750x0'
+
+  ]
+  res.send(_d)
+})
+
+
+
 app.listen(3344, () => {
   console.log("server is running");
 });
