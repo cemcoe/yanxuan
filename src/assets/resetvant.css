@@ -17,3 +17,18 @@
 .GoodsList_wrap .van-grid-item__text {
   font-size: .32rem;
 }
+
+/* 自定义 footer条 */
+/*字体大小*/
+.footerDiv .van-tabbar-item__text{
+  font-size: .32rem;
+}
+/*高度*/
+.footerDiv .van-tabbar{
+  height: 1.30667rem;
+}
+/*icon大小*/
+.footerDiv .van-icon{
+  height: .53333rem;
+  font-size: .53333rem;
+}

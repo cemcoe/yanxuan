@@ -16,6 +16,11 @@ Vue.use(GridItem);
 import { CountDown } from 'vant';
 Vue.use(CountDown);
 
+import { Tabbar, TabbarItem } from 'vant';
+
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
+
 new Vue({
   router,
   store,

@@ -78,20 +78,28 @@
           :text="item.img_txt"
         />
       </van-grid>
-
     </div>
+
+    <m-footer />
+
+    
   </div>
 </template>
 
 <script>
 import "@/assets/resetvant.css";
 import axios from "axios";
+import mFooter from '@/components/Footer.vue'
 
 export default {
   name: "IndexWrap",
+  components: {
+    mFooter
+  },
   data() {
     return {
       active: "",
+      factive: 0,
       tabBtnArr: [],
       swipe_imgArr: [],
       goodsColumn_Arr: [
