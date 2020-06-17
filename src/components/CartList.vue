@@ -13,7 +13,8 @@
     <div class="sidebarGoods">
       <div class="goodsItem" 
       v-for="(item, index) in goodsListObj"
-      :key="index">
+      :key="index"
+      @click="gotoGoodsBuy(item)">
         <img :src="item.goods_img" alt="">
         <p>{{item.goods_name}}</p>
         <b>{{item.goods_price}}</b>
@@ -87,6 +88,17 @@ export default {
       axios.get('http://localhost:3344/cate_goods_list_' + _inx)
       .then(_d => this.goodsListObj = _d.data)
     },
+    // 进入商品详情页
+    gotoGoodsBuy( _n ) {
+      // console.log(_n)
+      this.$router.push({
+        name: "Detail",
+        params: {
+          goods_info: _n
+        }
+      })
+
+    }
   }
 };
 </script>

@@ -26,6 +26,22 @@ import { Sidebar, SidebarItem } from 'vant';
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
 
+import { GoodsAction, GoodsActionIcon, GoodsActionButton } from 'vant';
+
+Vue.use(GoodsAction);
+Vue.use(GoodsActionButton);
+Vue.use(GoodsActionIcon);
+
+
+import { NavBar } from 'vant';
+
+Vue.use(NavBar);
+
+
+import { Sku } from 'vant';
+
+Vue.use(Sku);
+
 new Vue({
   router,
   store,

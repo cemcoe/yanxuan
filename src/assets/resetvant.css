@@ -1,36 +1,36 @@
 /* 重置 vant ui 样式 */
 
 .tabBtnWrap .van-tab {
-  font-size: .4rem;
+  font-size: 0.4rem;
 }
 
 .GoodsColumn_wrap .van-icon__image {
   font-size: 1.47rem;
 }
 .GoodsColumn_wrap .van-grid-item__text {
-  font-size: .32rem;
+  font-size: 0.32rem;
 }
 
 .GoodsList_wrap .van-icon__image {
   font-size: 1.47rem;
 }
 .GoodsList_wrap .van-grid-item__text {
-  font-size: .32rem;
+  font-size: 0.32rem;
 }
 
 /* 自定义 footer条 */
 /*字体大小*/
-.footerDiv .van-tabbar-item__text{
-  font-size: .32rem;
+.footerDiv .van-tabbar-item__text {
+  font-size: 0.32rem;
 }
 /*高度*/
-.footerDiv .van-tabbar{
+.footerDiv .van-tabbar {
   height: 1.30667rem;
 }
 /*icon大小*/
-.footerDiv .van-icon{
-  height: .53333rem;
-  font-size: .53333rem;
+.footerDiv .van-icon {
+  height: 0.53333rem;
+  font-size: 0.53333rem;
 }
 
 .sidebarClass .van-sidebar {
@@ -38,11 +38,30 @@
 }
 
 .sidebarClass .van-sidebar-item__text {
-  font-size: .37333rem;
+  font-size: 0.37333rem;
   white-space: nowrap;
   text-overflow: ellipsis;
-  line-height: .66667rem;
+  line-height: 0.66667rem;
   color: #333;
+}
 
+/* goodsActionClass */
+.goodsActionClass .van-button__text,
+.goodsActionClass .van-goods-action-icon,
+.goodsActionClass .van-goods-action-icon__icon {
+  font-size: 0.37333rem;
+}
+.goodsActionClass .van-goods-action-button {
+  height: 1.38667rem;
+}
+
+
+/* 导航栏 */
+.navBarClass .van-nav-bar__title{
+  font-size: .5rem;
+  padding-top: 23px;
+}
+.navBarClass .van-nav-bar{
+  height: 1.17333rem;
 }
 

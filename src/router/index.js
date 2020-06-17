@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import IndexWrap from "@/components/IndexWrap";
 import SearchPage from "@/components/SearchPage";
 import CartList from "@/components/CartList";
+import Detail from "@/components/Detail";
+
 
 Vue.use(VueRouter);
 
@@ -22,6 +24,11 @@ const routes = [
     path: "/cartlist",
     name: "CartList",
     component: CartList,
+  },
+  {
+    path: "/detail",
+    name: "Detail",
+    component: Detail,
   },
   {
     path: "/about",
