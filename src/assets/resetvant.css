@@ -32,3 +32,17 @@
   height: .53333rem;
   font-size: .53333rem;
 }
+
+.sidebarClass .van-sidebar {
+  width: 2.16rem;
+}
+
+.sidebarClass .van-sidebar-item__text {
+  font-size: .37333rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: .66667rem;
+  color: #333;
+
+}
+

@@ -21,6 +21,11 @@ import { Tabbar, TabbarItem } from 'vant';
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
 
+import { Sidebar, SidebarItem } from 'vant';
+
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
+
 new Vue({
   router,
   store,
