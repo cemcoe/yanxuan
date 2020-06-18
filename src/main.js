@@ -42,6 +42,10 @@ import { Sku } from 'vant';
 
 Vue.use(Sku);
 
+import { Uploader } from 'vant';
+
+Vue.use(Uploader);
+
 new Vue({
   router,
   store,

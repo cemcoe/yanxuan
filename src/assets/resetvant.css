@@ -65,3 +65,30 @@
   height: 1.17333rem;
 }
 
+
+/*sku*/
+.skuClass .van-sku__price-symbol,
+.skuClass .van-sku__price-num,
+.skuClass .van-sku__stock,
+.skuClass .van-sku__stock-num,
+.skuClass .van-sku-header-item,
+.skuClass .van-sku-row__title,
+.skuClass .van-sku-row__item-name,
+.skuClass .van-sku__stepper-title,
+.skuClass .van-cell,
+.skuClass .van-stepper__input{
+    font-size: .37333rem;
+}
+.skuClass .van-stepper__minus,
+.skuClass .van-stepper__input,
+.skuClass .van-stepper__plus{
+    width: .7rem;
+    height: .7rem;
+}
+
+.skuClass .van-sku-actions .van-button{
+    font-size: .37333rem;
+}
+.skuClass .van-sku-actions .van-button{
+    height: .7rem;
+}

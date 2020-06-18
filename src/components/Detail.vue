@@ -27,8 +27,20 @@
       </van-goods-action>
     </div>
 
-    <div>
-      <van-sku v-model="show" :sku="sku" :goods="goods" goods-id="goodsId" />
+    <div class="skuClass">
+      <van-sku 
+      v-model="show" 
+      :sku="sku" 
+      :goods="goods" 
+      goods-id="goodsId" 
+      @buy-clicked="onBuyClicked">
+
+      <template slot="sku-actions-top">
+					<van-uploader 
+						v-model="fileList"
+						:after-read="afterRead"></van-uploader>
+				</template>
+      </van-sku>
     </div>
   </div>
 </template>
@@ -41,10 +53,14 @@ export default {
       goods_name: "",
       goods_img: "",
       goods_price: 0,
+      // 图片预览
+			fileList:[],
+			// 保存上传的图片信息
+			uploader_img_arr:[],
       show: false,
       goods: {
         // 默认商品 sku 缩略图
-        picture: "https://img.yzcdn.cn/1.jpg"
+        picture: ""
       },
       sku: {
         // 所有sku规格类目与其值的从属关系，比如商品有颜色和尺码两大类规格，颜色下面又有红色和蓝色两个规格值。
@@ -96,7 +112,9 @@ export default {
           }
         ],
         hide_stock: false // 是否隐藏剩余库存
-      }
+      },
+      
+
     };
   },
   created() {
@@ -104,6 +122,8 @@ export default {
     this.goods_name = _n.goods_name;
     this.goods_img = _n.goods_img;
     this.goods_price = _n.goods_price;
+    // sku商品图
+    this.goods.picture = _n.goods_img
   },
   methods: {
     onClickIcon() {
@@ -115,7 +135,16 @@ export default {
     },
     gotoHome() {
       this.$router.push("/");
-    }
+    },
+    onBuyClicked(_skuData) {
+      console.log(_skuData)
+    },
+    // 图片上传
+		afterRead( _file ) {
+			// 此时可以自行将文件上传至服务器
+			// console.log( _file );
+			this.uploader_img_arr.push( _file );
+		},
   }
 };
 </script>
