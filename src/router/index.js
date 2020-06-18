@@ -5,6 +5,7 @@ import IndexWrap from "@/components/IndexWrap";
 import SearchPage from "@/components/SearchPage";
 import CartList from "@/components/CartList";
 import Detail from "@/components/Detail";
+import Login from "@/components/Login";
 
 
 Vue.use(VueRouter);
@@ -29,6 +30,11 @@ const routes = [
     path: "/detail",
     name: "Detail",
     component: Detail,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
   },
   {
     path: "/about",

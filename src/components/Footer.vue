@@ -5,7 +5,7 @@
       <van-tabbar-item icon="friends-o" to="/cartlist">分类</van-tabbar-item>
       <van-tabbar-item icon="search">值得买</van-tabbar-item>
       <van-tabbar-item icon="friends-o">购物车</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">个人</van-tabbar-item>
+      <van-tabbar-item icon="setting-o" to="login">个人</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
