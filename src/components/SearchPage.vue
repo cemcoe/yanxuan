@@ -60,7 +60,7 @@ export default {
     // enter 事件响应
     submitFn() {
       console.log(this.input_v);
-      axios.get("http://localhost:3344/search", {
+      axios.get("http://45.32.105.216:3344/search", {
         params: {
           search_key: this.input_v
         }

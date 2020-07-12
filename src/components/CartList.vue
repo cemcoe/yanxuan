@@ -79,13 +79,13 @@ export default {
     };
   },
   created() {
-    axios.get('http://localhost:3344/cate_goods_list_0')
+    axios.get('http://45.32.105.216:3344/cate_goods_list_0')
       .then(_d => this.goodsListObj = _d.data)
   },
   methods: {
     onChange( _inx ) {
       // console.log( _inx )
-      axios.get('http://localhost:3344/cate_goods_list_' + _inx)
+      axios.get('http://45.32.105.216:3344/cate_goods_list_' + _inx)
       .then(_d => this.goodsListObj = _d.data)
     },
     // 进入商品详情页

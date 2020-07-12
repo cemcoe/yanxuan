@@ -191,11 +191,11 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:3344/get_tabBtn_list")
+      .get("http://45.32.105.216:3344/get_tabBtn_list")
       .then(_d => (this.tabBtnArr = _d.data));
     // 轮播图
     axios
-      .get("http://localhost:3344/get_swipe_img")
+      .get("http://45.32.105.216:3344/get_swipe_img")
       .then(_d => (this.swipe_imgArr = _d.data));
   },
   methods: {
